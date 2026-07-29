@@ -5,7 +5,6 @@ import Footer from './components/Footer'
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 import { v4 } from 'uuid';
-//Hello
 
 function App() {
 
