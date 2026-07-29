@@ -95,7 +95,7 @@ function App() {
   }
 
   return (
-    <div className='flex flex-col h-screen'>
+    <div className='flex min-h-screen flex-col'>
       <Navbar />
       <div className='flex flex-1 flex-col items-center bg-[radial-gradient(60%_120%_at_50%_100%,hsla(0,0%,100%,0)_0,rgba(252,205,238,.5)_100%)] overflow-auto'>
 
