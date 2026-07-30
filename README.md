@@ -1,16 +1,33 @@
-# React + Vite
+# MyPsW
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MyPsW is a simple password manager built with React and Vite. It lets users save website credentials, view them securely, copy them quickly, and edit or delete entries when needed.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Save a URL, username, and password
+- Show or hide passwords in the form and password table
+- Copy username or password with one click
+- Edit existing saved credentials
+- Delete saved credentials
+- Store data locally in the browser using localStorage
+- Responsive interface with a clean modern design
 
-## React Compiler
+## Tech Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- React
+- Vite
+- Tailwind CSS
+- React Hook Form
+- React Toastify
+- UUID
 
-## Expanding the ESLint configuration
+## Project Structure
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- src/App.jsx: main application logic and UI
+- src/components/Navbar.jsx: top navigation bar
+- src/components/Footer.jsx: footer component
+- public/: static assets and images
+
+## Notes
+
+Saved passwords are stored in the browser's localStorage, so they will remain available until browser data is cleared.
