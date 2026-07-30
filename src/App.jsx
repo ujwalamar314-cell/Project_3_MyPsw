@@ -225,7 +225,7 @@ function App() {
 
                       <div className='flex justify-between w-full'>
                         <div>
-                          {showpasswordTable ? element.password : "**********"}
+                          {showpasswordTable ? element.password : "*".repeat(element.password.length)}
                         </div>
 
                         <div>
