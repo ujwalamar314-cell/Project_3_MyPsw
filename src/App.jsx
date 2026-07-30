@@ -11,6 +11,7 @@ function App() {
   const [passwordArray, setpasswordArray] = useState([])
   const [message, setmessage] = useState("Save Your")
   const [showpassword, setshowpassword] = useState(false)
+  const [showpasswordTable, setshowpasswordTable] = useState(false)
   const [editstatus, seteditstatus] = useState(false)
   const [edit_id, setedit_id] = useState("")
 
@@ -155,7 +156,7 @@ function App() {
 
             <button
               type="submit" disabled={isSubmitting}
-              className='bg-mauve-300 w-fit self-center text-mauve-700 font-semibold py-1 px-6 rounded-full border-mauve-700 border-2 cursor-pointer hover:bg-mauve-500 hover:text-mauve-300 hover:border-mauve-300 transition justify-center items-center flex gap-2'>
+              className=' bg-mauve-300 w-fit self-center text-mauve-700 font-semibold py-1 px-6 rounded-full border-mauve-700 border-2 cursor-pointer hover:bg-mauve-500 hover:text-mauve-300 hover:border-mauve-300 transition justify-center items-center flex gap-2 '>
               <lord-icon
                 src="https://cdn.lordicon.com/efxgwrkc.json"
                 trigger="hover"
@@ -172,17 +173,27 @@ function App() {
 
         <div className='md:w-[70%] w-full rounded-lg p-5 mt-2.5'>
 
-          <div className='pb-10 text-2xl font-bold'>Your Passwords</div>
+          <div className='pb-5 text-2xl font-bold'>Your Passwords</div>
 
           {passwordArray.length === 0 && <div>You Have Not Saved Any Passwords !</div>}
-          {passwordArray.length != 0 &&
+          {passwordArray.length != 0 && <>
+            
+            <div
+              className='group flex gap-4 right-3 top-3 md:top-3 cursor-pointer bg-mauve-300 w-fit self-center text-mauve-700 font-semibold py-1 px-6 rounded-full border-mauve-700 border-2 hover:bg-mauve-500 hover:text-mauve-300 hover:border-mauve-300 mb-5'
+              onClick={() => { showpasswordTable ? setshowpasswordTable(false) : setshowpasswordTable(true) }}>{showpasswordTable ? "Hide Passwords":"Show Passwords" }
 
+              <img
+              className='group-hover:invert'
+                src={showpasswordTable ? "show.svg" : "hide.svg"}
+                alt="show" />
+
+            </div>
             <table className='w-full overflow-hidden rounded-lg bg-mauve-200'>
               <thead className='bg-mauve-700 text-white'>
                 <tr className='*:py-1.5 '>
                   <th scope="col" className='w-[30%]'>URL</th>
                   <th scope="col" className='border-x-2 border-white w-[30%] '>Username</th>
-                  <th scope="col" className='border-x-2 border-white w-[30%] ' >Password</th>
+                  <th scope="col" className='border-x-2 border-white w-[30%] relative' ><span>Password</span></th>
                   <th scope="col" className='w-[10%]' >Action</th>
                 </tr>
               </thead>
@@ -214,7 +225,7 @@ function App() {
 
                       <div className='flex justify-between w-full'>
                         <div>
-                          {element.password}
+                          {showpasswordTable ? element.password : "**********"}
                         </div>
 
                         <div>
@@ -247,6 +258,7 @@ function App() {
                 </tbody>
               })}
             </table>
+          </>
           }
           <div className=' bg-transparent text-transparent text-center text-3xl p-3 font-bold'>MyPsw</div>
         </div>
